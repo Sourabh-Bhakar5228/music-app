@@ -115,7 +115,7 @@ body {
   position: absolute;
   top: 220px;
   right: 20px;
-  opacity: 1;
+  opacity: 0;
   transition: all 1s ease-out;
 }
 .button > * {
@@ -153,12 +153,12 @@ body {
 .playbar {
   position: fixed;
   bottom: 25px;
-  width: 95%;
+  width: 70%;
   padding: 12px;
   filter: invert(1);
   border-radius: 10px;
   background: #dad5d5;
-  height: 36px;
+  min-height: 36px;
 }
 .Song-btn {
   display: flex;
@@ -174,7 +174,7 @@ body {
   padding: 0 12px;
 }
 .SongList .info {
-  font-size: 12px;
+  font-size: 10px;
   width: 344px;
 }
 .SongList ul li {
@@ -188,6 +188,9 @@ body {
   border-radius: 8px;
   margin: 12px 0;
   padding: 13px;
+}
+.songInfo div {
+  word-break: break-all;
 }
 .playNow {
   display: flex;
@@ -221,7 +224,11 @@ body {
 .Song-btn img {
   cursor: pointer;
 }
-.songInfo,
+.songInfo {
+  color: black;
+  padding: 0 12px;
+  width: 233px;
+}
 .songtime {
   color: black;
   padding: 0 12px;
@@ -230,15 +237,28 @@ body {
   display: flex;
   justify-content: space-between;
 }
-
-@media (max-width: 1400px) {
+.volanTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.volume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+}
+@media (max-width: 1300px) {
   .left {
     position: absolute;
     left: -130%;
     transition: all 0.3s ease-in-out;
     z-index: 1;
-    width: 370px;
+    width: 350px;
     background-color: black;
+    padding: 0;
   }
   .left .close {
     position: absolute;
@@ -246,12 +266,16 @@ body {
     top: 25px;
     width: 28px;
   }
+  .close {
+    display: block;
+  }
   .right {
     width: 100vw;
+    margin: 0;
   }
   .playbar {
     width: 88vw;
-    height: 50px;
+    font-size: 13px;
   }
   .seekbar {
     width: 88vw;
@@ -261,6 +285,43 @@ body {
     height: 50px;
   }
   .card img {
-    height: 100px;
+    height: 200px;
+  }
+  .SongList ul li {
+    font-size: 13px;
+  }
+  .sign-up-btn {
+    font-size: 11px;
+  }
+  .login-up-btn {
+    font-size: 11px;
+  }
+  .footer {
+    gap: 7px;
+  }
+  .card {
+    width: 90vw;
+  }
+  .card-Container {
+    margin: 0;
+  }
+  .songinquary {
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+  }
+  .card-Container {
+    justify-content: center;
+  }
+  .songInfo {
+    width: auto;
+  }
+  .volanTime {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+    cursor: pointer;
   }
 }
